@@ -1,4 +1,4 @@
-# THE NEWS
+# The Weather
 A news website made with React (still in development)
 
 ---
