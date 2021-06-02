@@ -1,8 +1,14 @@
 # THE NEWS
 A news website made with React (still in development)
+
 ---
-1. `npm install`  
-2. `npm start`
+#How to start
+1. `npm install` to install all dependencies 
+2. `npm start` to start the project (it usually runs on port 3000)
+---
+#Technologies used
+- React
+- Context API (not yet implemented)
 ---
 ## Screenshot
 ![Demonstration](https://i.imgur.com/6ORj9hQ.png)
