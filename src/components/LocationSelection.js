@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import magnifyingGlass from "../images/icons/magnifyingGlass.png";
+import { WeatherContext } from "./../contexts/WeatherContext";
 
 export default function LocationSelection(props) {
-  const [input, setInput] = useState();
+  const { inputValue, dataValue } = useContext(WeatherContext);
+  const [input, setInput] = inputValue;
+  const [data, setData] = dataValue;
 
   function parseToInput(str) {
     if (str.split(" ")) {
@@ -19,7 +22,7 @@ export default function LocationSelection(props) {
       const response = fetch(apiUrl)
         .then((res) => res.json())
         .then((json) => {
-          props.setData(json);
+          setData(json);
         });
       console.log(response);
     }

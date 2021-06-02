@@ -5,10 +5,7 @@ import WeatherDetails from "./WeatherDetails";
 export default function RightMenu(props) {
   return (
     <div className="right-menu">
-      <LocationSelection
-        data={props.data}
-        setData={props.setData}
-      ></LocationSelection>
+      <LocationSelection></LocationSelection>
       <WeatherDetails></WeatherDetails>
     </div>
   );

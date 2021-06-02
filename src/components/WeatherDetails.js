@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { WeatherContext } from "./../contexts/WeatherContext";
 
 export default function WeatherDetails(props) {
+  const { dataValue } = useContext(WeatherContext);
+  const [data] = dataValue;
   return (
     <table className="weather-details">
       <tr>
@@ -8,19 +11,39 @@ export default function WeatherDetails(props) {
       </tr>
       <tr>
         <td>Cloudy</td>
-        <td>12%</td>
+        <td>
+          {data
+            ? Math.round(data.location.currentConditions.cloudcover) ||
+              Math.round(data.location.values[0].cloudcover) + "%"
+            : "--"}
+        </td>
       </tr>
       <tr>
         <td>Humidity</td>
-        <td>78%</td>
+        <td>
+          {data
+            ? Math.round(data.location.currentConditions.humidity) ||
+              Math.round(data.location.values[0].humidity) + "%"
+            : "--"}
+        </td>
       </tr>
       <tr>
         <td>Wind</td>
-        <td>1km/h</td>
+        <td>
+          {data
+            ? data.location.currentConditions.wspd ||
+              Math.round(data.location.values[0].wspd) + "km/h"
+            : "--"}
+        </td>
       </tr>
       <tr>
         <td>Rain</td>
-        <td>0mm</td>
+        <td>
+          {data
+            ? data.location.currentConditions.precip ||
+              Math.round(data.location.values[0].precip) + "mm"
+            : "--"}
+        </td>
       </tr>
     </table>
   );
