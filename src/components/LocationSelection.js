@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import magnifyingGlass from "../images/icons/magnifyingGlass.png";
 import { WeatherContext } from "./../contexts/WeatherContext";
+require("dotenv").config();
 
 export default function LocationSelection(props) {
+  const API_KEY = process.env.REACT_APP_API_KEY;
   const { inputValue, dataValue } = useContext(WeatherContext);
   const [input, setInput] = inputValue;
   const [data, setData] = dataValue;
@@ -18,7 +20,7 @@ export default function LocationSelection(props) {
 
   function fetchInfo(location) {
     if (location) {
-      const apiUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/weatherdata/forecast?aggregateHours=24&combinationMethod=aggregate&contentType=json&unitGroup=metric&locationMode=single&key=6DPN69KLCTKDWFR5KH7REPTX3&dataElements=default&locations=${location}`;
+      const apiUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/weatherdata/forecast?aggregateHours=24&combinationMethod=aggregate&contentType=json&unitGroup=metric&locationMode=single&key=${API_KEY}&dataElements=default&locations=${location}`;
       const response = fetch(apiUrl)
         .then((res) => res.json())
         .then((json) => {

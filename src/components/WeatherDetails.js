@@ -13,7 +13,7 @@ export default function WeatherDetails(props) {
         <td>Cloudy</td>
         <td>
           {data
-            ? Math.round(data.location.currentConditions.cloudcover) ||
+            ? Math.round(data.location.currentConditions.cloudcover) + "%" ||
               Math.round(data.location.values[0].cloudcover) + "%"
             : "--"}
         </td>
@@ -22,7 +22,7 @@ export default function WeatherDetails(props) {
         <td>Humidity</td>
         <td>
           {data
-            ? Math.round(data.location.currentConditions.humidity) ||
+            ? Math.round(data.location.currentConditions.humidity) + "%" ||
               Math.round(data.location.values[0].humidity) + "%"
             : "--"}
         </td>
@@ -31,8 +31,8 @@ export default function WeatherDetails(props) {
         <td>Wind</td>
         <td>
           {data
-            ? data.location.currentConditions.wspd ||
-              Math.round(data.location.values[0].wspd) + "km/h"
+            ? data.location.currentConditions.wspd + "km/h" ||
+              data.location.values[0].wspd + "km/h"
             : "--"}
         </td>
       </tr>
@@ -40,8 +40,8 @@ export default function WeatherDetails(props) {
         <td>Rain</td>
         <td>
           {data
-            ? data.location.currentConditions.precip ||
-              Math.round(data.location.values[0].precip) + "mm"
+            ? data.location.currentConditions.precip + "mm" ||
+              data.location.values[0].precip + "mm"
             : "--"}
         </td>
       </tr>
