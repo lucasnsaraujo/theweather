@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {font-family: 'Montserrat', sans-serif ;margin: 0px; padding: 0px; color: white;}
+
+
+.body-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: auto;
+  background-image: url('./images/raindrop.jpg');
+}
+.body-container::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0,0,0,0.4);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.right-menu{
+  backdrop-filter: blur(50px);
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 40%;
+  
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.info-container {
+  position: relative;
+  display: flex;
+  color: white;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 90px;
+  width: 400px;
+  flex-wrap: nowrap;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.info-container h1, h2, h3 {
+  padding-left: 20px;
+}
+.info-container h1 {
+  font-size: 80pt;
+  margin-bottom: 0px;
+  line-height: 70pt;
+  font-weight: 500;
+}
+.info-container h2 {
+  font-size: 30pt;
+  margin-left: 5px;
+  padding-right: 30px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+.info-container h3 {
+  margin-bottom: 7px;
+  margin-top: 5px;
+  font-weight: 400;
+}
+.info-wrapper {
+  display: flex;
+  width: 50vw;
+  justify-content: center
+}
+.weather-status {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-content: space-between;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.weather-status h3 {
+  padding-left: 3px;
 }
+.weather-status img {
+  margin: auto;
+  width: 60px;
+  display: flex;
+}
+input {
+  min-width: 15rem;
+  height: 3rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.0001px solid white;
+  font-size: 15px;
+  margin-right: 30px;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+input:focus-visible {
+  border-bottom: 3px solid white;
+  outline: none;
+  transition: 0.2s
+}
+button img {
+  max-width: 20px;
+}
+button{
+  width: 80px;
+  height: 80px;
+  outline: 0;
+  background-color: lightgray;
+  border: none;
+  cursor: pointer;
+  float: right
+}
+button:hover{ 
+  background-color: rgb(196, 52, 0);
+}
+.right-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.search-bar {
+  display: block;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+}
+.suggestion-list {
+  display: block;
+  height: 300px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  width: 80%;
+}
+.suggestion-list ul li {
+  list-style: none;
+  padding: 20px;
+}
+.weather-details {
+  height: 300px;
+  margin-left: 50px;
+  margin-bottom: 100px;
+}
+.weather-details {
+  text-align: left;
 }
