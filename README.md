@@ -7,8 +7,9 @@ A news website made with React (still in development)
 2. `npm start` to start the project (it usually runs on port 3000)
 ---
 ## Technologies used
-- React
-- Context API (not yet implemented)
+- React + Hooks
+- Context API
+- dotenv (for development variables)
 ---
 ## Screenshot
 ![Demonstration](https://i.imgur.com/6ORj9hQ.png)
