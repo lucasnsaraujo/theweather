@@ -2,11 +2,11 @@
 A news website made with React (still in development)
 
 ---
-#How to start
+## How to start
 1. `npm install` to install all dependencies 
 2. `npm start` to start the project (it usually runs on port 3000)
 ---
-#Technologies used
+## Technologies used
 - React
 - Context API (not yet implemented)
 ---
