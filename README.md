@@ -1,5 +1,5 @@
 # The Weather
-A news website made with React (still in development)
+A weather website made with React (still in development)
 
 ---
 ## How to start
